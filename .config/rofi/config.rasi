@@ -1,0 +1,61 @@
+configuration {
+    display-drun:       "Apps";
+    display-window:     "Window";
+    show-icons:		false;
+}
+* {	
+    lines: 4;
+    columns: 1;
+    selected-normal-foreground: #cc88ff;
+	normal-foreground: #A290F1;
+	alternate-normal-foreground: #A290F1; 
+
+	selected-normal-background: #00000000;
+	normal-background: #00000000;
+	alternate-normal-background: #00000000;
+			
+    border-color: #7555FF;
+   	text-color: #A290F1;
+    font: "Terminess Nerd Font Bold 36";
+	opacity: 0.3;
+}
+ 
+#window {
+	background-color: #1B1F3B;
+    border: 4;
+    padding: 2.5%;
+    width: 30%;
+    height: 28%;
+}
+ 
+#mainbox {
+    children: [inputbar, listview];
+    spacing: 10px;
+    padding: 7px 0;
+}
+ 
+#listview {
+    fixed-height: 0;
+    border: 0px;
+    spacing: 3px;
+    scrollbar: false;
+}
+ 
+#element {
+    border-color: #A290F1;
+    padding: 4 0 6 -25;
+}
+ 
+ 
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    background-color: #00000000;
+}
+ 
+ 
+#textbox-prompt-colon {
+    expand:     false;
+    str:        " >";
+    margin:     0px 0.3em 0em 0em ;
+}
+

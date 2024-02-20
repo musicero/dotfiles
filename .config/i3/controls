@@ -1,0 +1,111 @@
+# i3 config file for controls and shortcuts
+
+set $mod Mod4
+
+floating_modifier $mod
+
+bindsym $mod+Shift+q kill
+
+# split horzontal/vertical
+bindsym $mod+m split h
+bindsym $mod+n split v
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+Shift+space floating toggle
+
+# switch between tiling/floating windows
+bindsym $mod+space focus mode_toggle
+
+# restart i3
+bindsym $mod+Shift+r restart
+
+# exit i3
+bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'
+
+# change kblayout
+bindsym $mod+comma exec setxkbmap no
+bindsym $mod+period exec setxkbmap us
+
+## Resize
+set $resize 60 px or 4 ppt
+bindsym $mod+Ctrl+h resize shrink width  $resize
+bindsym $mod+Ctrl+j resize grow   height $resize
+bindsym $mod+Ctrl+k resize shrink height $resize
+bindsym $mod+Ctrl+l resize grow   width  $resize
+set $resize2 30 px or 2 ppt
+bindsym $mod+Ctrl+Left  resize shrink width  $resize2
+bindsym $mod+Ctrl+Down  resize grow   height $resize2
+bindsym $mod+Ctrl+Up    resize shrink height $resize2
+bindsym $mod+Ctrl+Right resize grow   width  $resize2
+
+## Focus
+bindsym $mod+h 	   focus left
+bindsym $mod+j     focus down
+bindsym $mod+k     focus up 
+bindsym $mod+l     focus right
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+# Move focused
+set $move 60 px
+bindsym $mod+Shift+h move left 	$move
+bindsym $mod+Shift+j move down 	$move
+bindsym $mod+Shift+k move up 	$move
+bindsym $mod+Shift+l move right $move
+set $move2 30 px
+bindsym $mod+Shift+Left  move left  $move2
+bindsym $mod+Shift+Down  move down  $move2
+bindsym $mod+Shift+Up    move up    $move2
+bindsym $mod+Shift+Right move right $move2
+
+
+set $refresh_i3status killall -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset 'Master' 5%+ unmute && $refresh
+#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset 'Master' 5%- unmute
+#bindsym XF86AudioMute exec --no-startup-id amixer -q sset 'Master' toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%  # Up
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%  # Down
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
+
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+bindsym XF86AudioPrev    exec --no-startup-id playerctl previous
+bindsym XF86AudioPlay    exec --no-startup-id playerctl play
+bindsym XF86AudioPause   exec --no-startup-id playerctl pause
+bindsym XF86AudioNext    exec --no-startup-id playerctl next
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl --min-value=1 --exponent=4 set +7%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-value=1 --exponent=4 set 7%-
+
+# ADD i3Lock
+
+# Quicklaunch
+bindsym $mod+Return exec kitty
+bindsym $mod+BackSpace exec firefox
+bindsym $mod+d exec --no-startup-id rofi -no-show-match -show drun
+bindsym $mod+Shift+s exec flameshot gui
+bindsym $mod+s exec flameshot gui
+bindsym $mod+Shift+period exec i3lock \
+	-e 									\
+	-c 1b1f3bff 						\
+	--radius 110 						\
+	--ring-width 8.0 					\
+	--inside-color=101324ff 			\
+	--ring-color=7555ffff 				\
+	--insidever-color=ffffffee 			\
+	--ringver-color=ffffffee 			\
+	--insidewrong-color=101324ff 		\
+	--ringwrong-color=a11d32ff 			\
+	--keyhl-color=ffffffaa 				\
+	--bshl-color=f90b31ff 				\
+	--verif-text="" 					\
+	--wrong-text="" 					\
+	--noinput-text="" 					\
+	--lock-text="" 						\
+	--pass-media-keys 					\
+	--pass-screen-keys 					\
+	--pass-power-keys 					\
+	--pass-volume-keys 					\
+	--composite 						\
+	--indicator 						

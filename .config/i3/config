@@ -1,0 +1,15 @@
+# Ollie's config
+
+#i3 config file (v4)
+
+# Colors, borders, gaps, corners and bar
+include style
+
+# Window controls and quick-launch shortcuts
+include controls	
+
+# Workspace names and assignments
+include workspace
+
+# Launch applications on boot	
+include startup

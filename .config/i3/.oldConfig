@@ -1,0 +1,204 @@
+# Oliver's config
+set $mod Mod4
+
+#Gaps---------------------------------
+for_window [class=".*"] border pixel 2
+gaps outer 0
+gaps inner 10
+# border_radius 2
+
+#Experimental
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+#Font----------------------
+font pango:Baloo2 Bold 10
+# font pango:Terminus (TTF) Bold 14
+
+# OS colors ---------------------------------------------
+exec_always --no-startup-id autorandr --change
+exec_always --no-startup-id sleep 1 && hsetroot -solid '#1B1F3B'
+#exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
+exec --no-startup-id polybar
+set $x		#ff0000		
+set $urgent 	#FF8000
+set $focus	#7555FF 
+set $ufocus	#1B1F3B
+
+#BarColors-------------
+#set $bg   #1B1F3B
+#set $it	  #443883
+#set $t    #7555FF
+
+
+#OS-----------------------------------------
+client.focused			$x $x $x $focus  $focus
+client.focused_inactive $x $x $x $ufocus $ufocus
+client.unfocused		$x $x $x $ufocus $ufocus
+client.urgent			$x $x $x $urgent $urgent
+#Bar-----------------------------------------
+#bar {
+#	font pango: Terminus (TTF) Bold 14
+#	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#	tray_output none
+#	colors {
+#		background $bg
+#		separator  $bg
+#		focused_workspace  $bg $bg $t
+#		active_workspace   $bg $bg $t
+#		inactive_workspace $bg $bg $it
+#	}
+#}
+
+#Theme-------------------------------------------
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
+#exec --no-startup-id clight
+#Quicklaunch---------------------------------------
+bindsym $mod+s exec flameshot gui
+bindsym $mod+Return exec kitty
+bindsym $mod+BackSpace exec firefox
+bindsym $mod+d exec --no-startup-id rofi -no-show-match -show drun 
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec --no-startup-id redshift -t 2500K:6500K
+
+#bindsym $mod+apostrophe exec scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
+
+#Shortcuts------------------------
+# Drag floating windows with mouse
+floating_modifier $mod
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Split horizontally
+bindsym $mod+m split h
+
+# Split vertically
+bindsym $mod+n split v 
+
+# Enter fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Toggle tiling/floating
+bindsym $mod+Shift+space floating toggle
+
+# Switch between tiling/floating
+bindsym $mod+space focus mode_toggle
+
+# Restart i3
+bindsym $mod+Shift+r restart
+
+# Exit i3
+bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'
+
+# Change kblayout
+bindsym $mod+comma  exec setxkbmap no
+bindsym $mod+period exec setxkbmap us
+
+#Resize-----------------------------------------------------
+
+# These bindings trigger as soon as you enter the resize mode
+bindsym $mod+Ctrl+h resize shrink width 60 px or 4 ppt
+bindsym $mod+Ctrl+j resize grow height 60 px or 4 ppt
+bindsym $mod+Ctrl+k resize shrink height 60 px or 4 ppt
+bindsym $mod+Ctrl+l resize grow width 60 px or 4 ppt
+
+bindsym $mod+Ctrl+Left	resize shrink width 30 px or 2 ppt
+bindsym $mod+Ctrl+Down	resize grow height 30 px or 2 ppt
+bindsym $mod+Ctrl+Up	resize shrink height 30 px or 2 ppt
+bindsym $mod+Ctrl+Right resize grow width 30 px or 2 ppt
+
+#Change focus---------------
+bindsym $mod+h		focus left  
+bindsym $mod+j		focus down  
+bindsym $mod+k		focus up    
+bindsym $mod+l		focus right 
+bindsym $mod+Left	focus left
+bindsym $mod+Down	focus down
+bindsym $mod+Up		focus up
+bindsym $mod+Right	focus right
+
+#Move focused--------------------
+bindsym $mod+Shift+h	move left 60 px
+bindsym $mod+Shift+j	move down 60 px 
+bindsym $mod+Shift+k	move up   60 px
+bindsym $mod+Shift+l	move right 60 px
+bindsym $mod+Shift+Left move left 30 px
+bindsym $mod+Shift+Down move down 30 px
+bindsym $mod+Shift+Up	move up 30 px
+bindsym $mod+Shift+Right move right 30 px
+
+#Workspaces----------------------
+set $ws1 "z"
+set $ws2 "x"
+set $ws3 "c"
+set $ws4 "u"
+set $ws5 "i"
+set $ws6 "o"
+set $ws7 "p"
+set $ws8 "7"
+set $ws9 "8"
+set $ws10 "9"
+set $ws11 "0"
+# Switch to ws-------------------
+bindsym $mod+$ws1	workspace $ws1
+bindsym $mod+$ws2	workspace $ws2
+bindsym $mod+$ws3	workspace $ws3
+bindsym $mod+$ws4	workspace $ws4
+bindsym $mod+$ws5	workspace $ws5
+bindsym $mod+$ws6	workspace $ws6
+bindsym $mod+$ws7	workspace $ws7
+bindsym $mod+$ws8	workspace number $ws8
+bindsym $mod+$ws9	workspace number $ws9
+bindsym $mod+$ws10	workspace number $ws10
+bindsym $mod+$ws11	workspace number $ws11
+# Move focused to ws------------------------------------
+bindsym $mod+Shift+$ws1 move container to workspace $ws1
+bindsym $mod+Shift+$ws2 move container to workspace $ws2
+bindsym $mod+Shift+$ws3 move container to workspace $ws3
+bindsym $mod+Shift+$ws4 move container to workspace $ws4
+bindsym $mod+Shift+$ws5 move container to workspace $ws5
+bindsym $mod+Shift+$ws6 move container to workspace $ws6
+bindsym $mod+Shift+$ws7 move container to workspace $ws7
+bindsym $mod+Shift+$ws8 move container to workspace number $ws8
+bindsym $mod+Shift+$ws9 move container to workspace number $ws9
+bindsym $mod+Shift+$ws10 move container to workspace number $ws10
+bindsym $mod+Shift+$ws11 move container to workspace number $ws11
+
+#Assign program to special workspace------------------------------
+assign [class="Spotify"] $ws3
+assign [title="Microsoft Teams Notification"] $ws3
+for_window [title="Microsoft Teams Notification"] floating enable
+for_window [title="Microsoft Teams Notification"] sticky enable 
+for_window [title="feh"] floating enable
+#VolumeControl-----------------------------------------------------------------------------------------------------------
+set $refresh_i3status killall -SIGUSR1 i3status
+
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl \
+# set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl \
+# set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+# bindsym XF86AudioMute exec --no-startup-id pactl \
+# set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym XF86AudioMicMute exec --no-startup-id pactl \ 
+# set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86AudioMute exec amixer sset 'Master' toggle
+bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
+bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+
+bindsym XF86AudioPrev  exec --no-startup-id playerctl previous
+bindsym XF86AudioPlay  exec --no-startup-id playerctl play
+bindsym XF86AudioPause exec --no-startup-id playerctl pause
+bindsym XF86AudioNext  exec --no-startup-id playerctl next
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 
+
+#i3lock----------------------------------------------
+bindsym $mod+SHIFT+period exec --no-startup-id i3lock -c 002b36 --insidevercolor=073642ff --insidewrongcolor=dc322f00 --insidecolor=073642ff --ringvercolor=2aa198ff --ringwrongcolor=cb4b16ff --ringcolor=268bd2ff --line-uses-inside --keyhlcolor=2aa198ff --bshlcolor=dc322fff --separatorcolor=073642ff --verifcolor=00000000 --wrongcolor=00000000 && systemctl suspend
+
+bindsym $mod+SHIFT+slash exec --no-startup-id i3lock -c 002b36 --insidevercolor=073642ff --insidewrongcolor=dc322f00 --insidecolor=073642ff --ringvercolor=2aa198ff --ringwrongcolor=cb4b16ff --ringcolor=268bd2ff --line-uses-inside --keyhlcolor=2aa198ff --bshlcolor=dc322fff --separatorcolor=073642ff --verifcolor=00000000 --wrongcolor=00000000
+
+bindsym $mod+SHIFT+minus exec --no-startup-id i3lock -c 002b36 --insidevercolor=073642ff --insidewrongcolor=dc322f00 --insidecolor=073642ff --ringvercolor=2aa198ff --ringwrongcolor=cb4b16ff --ringcolor=268bd2ff --line-uses-inside --keyhlcolor=2aa198ff --bshlcolor=dc322fff --separatorcolor=073642ff --verifcolor=00000000 --wrongcolor=00000000 
+
+# Configure displays-------------------------------
+#exec --no-startup-id redshift

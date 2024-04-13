@@ -13,7 +13,7 @@ $exec polybar
 #$ns /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Exec_always
-$exec_always setxkbmap -option ctrl:swapcaps
+# $exec_always setxkbmap -option ctrl:swapcaps
 $exec_always autorandr -c
 #exec_always hsetroot -solid '#1B1F3B'
 #$exec_always autorandr --change

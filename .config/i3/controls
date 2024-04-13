@@ -81,7 +81,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-value=1 -
 # ADD i3Lock
 
 # Quicklaunch
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 bindsym $mod+BackSpace exec firefox
 bindsym $mod+d exec --no-startup-id rofi -no-show-match -show drun
 bindsym $mod+Shift+s exec flameshot gui

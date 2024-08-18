@@ -50,12 +50,12 @@ bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 
 # Move focused
-set $move 60 px
+set $move 200 px
 bindsym $mod+Shift+h move left 	$move
 bindsym $mod+Shift+j move down 	$move
 bindsym $mod+Shift+k move up 	$move
 bindsym $mod+Shift+l move right $move
-set $move2 30 px
+set $move2 100 px
 bindsym $mod+Shift+Left  move left  $move2
 bindsym $mod+Shift+Down  move down  $move2
 bindsym $mod+Shift+Up    move up    $move2

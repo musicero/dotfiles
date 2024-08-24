@@ -1,14 +1,14 @@
 # i3 config file for launching applications on startup
 
-set $exec  			exec	    --no-startup-id
-set $exec_always 	exec_always --no-startup-id
+set $exec         exec --no-startup-id
+set $exec_always  exec_always --no-startup-id
 
 # Exec
 $exec /usr/lib/geoclue-2.0/demos/agent
-$exec redshift -t 6500:2500
+# $exec redshift -t 6500:2500
 #$exec picom --backend glx --blur-background --blur-method dual_kawase --blur-strength 8 --fading
 $exec picom --config ~/.config/picom/picom.conf
-$exec ~/.config/i3/blink
+# $exec ~/.config/i3/blink
 $exec polybar
 #$ns /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 

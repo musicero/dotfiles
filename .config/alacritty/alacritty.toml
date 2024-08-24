@@ -9,8 +9,8 @@ size = 12.5
 family = "ShureTechMono Nerd Font"
 
 [window]
-dynamic_padding = true
 opacity = 0.5
+dynamic_padding = true
 [window.padding]
 x = 0
 y = 0
@@ -29,6 +29,3 @@ blinking = "On"
 
 [mouse]
 hide_when_typing = true
-
-
-

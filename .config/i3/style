@@ -1,9 +1,9 @@
 
 ## Borders
 for_window [class=".*"] border pixel 2
-gaps outer 0
+gaps outer 8
 gaps inner 10
-#border_radius 2
+#border_radius 10
 
 ## Font
 font pango:TerminessTTF Nerd Font Mono Bold 14
@@ -14,10 +14,10 @@ set $urgent #FF8000
 set $focus	#7555FF
 set $ufocus	#171b33
 
-client.focused			$x $x $x $focus  $focus
-client.focused_inactive	$x $x $x $ufocus $ufocus
-client.unfocused		$x $x $x $ufocus $ufocus
-client.urgent			$x $x $x $urgent $urgent
+client.focused          $x $x $x $focus  $focus
+client.focused_inactive $x $x $x $ufocus $ufocus
+client.unfocused        $x $x $x $ufocus $ufocus
+client.urgent           $x $x $x $urgent $urgent
 
 set $bg #1B1F3B98
 set $it #443883

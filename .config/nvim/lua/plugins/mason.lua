@@ -8,6 +8,8 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
+        "clangd",
+        "rust-analyzer",
       },
     },
   },

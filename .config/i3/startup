@@ -15,7 +15,7 @@ $exec polybar
 # Exec_always
 # $exec_always setxkbmap -option ctrl:swapcaps
 $exec_always autorandr -c
-#exec_always hsetroot -solid '#1B1F3B'
 #$exec_always autorandr --change
-#$exec_always sleep 1 && hsetroot -solid '#1B1F3B'
+# exec_always hsetroot -solid '#1B1F3B'
+# $exec_always sleep 1 && hsetroot -solid '#1B1F3B'
 $exec_always feh --bg-fill ~/.config/i3/wallpaper.png

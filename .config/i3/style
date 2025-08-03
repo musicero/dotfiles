@@ -2,7 +2,7 @@
 ## Borders
 for_window [class=".*"] border pixel 2
 gaps outer 0
-gaps inner 10
+gaps inner 0
 #border_radius 2
 
 ## Font
@@ -21,7 +21,7 @@ client.urgent			$x $x $x $urgent $urgent
 
 set $bg #1B1F3B98
 set $it #443883
-set $t  #7555FF
+set $t  #ffffff
 
 
 #bar {

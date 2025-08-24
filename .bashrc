@@ -34,3 +34,5 @@ PS1='\[\e[0;95m\]\u@\h \W \$ \[\e[0;0m\]'
 
 #source /usr/share/nvm/init-nvm.sh
 #
+
+source /home/druze/.config/broot/launcher/bash/br

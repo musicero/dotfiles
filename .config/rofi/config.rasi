@@ -7,21 +7,21 @@ configuration {
     lines: 4;
     columns: 1;
     selected-normal-foreground: #cc88ff;
-	normal-foreground: #A290F1;
-	alternate-normal-foreground: #A290F1; 
+    normal-foreground: #A290F1;
+    alternate-normal-foreground: #A290F1; 
 
-	selected-normal-background: #00000000;
-	normal-background: #00000000;
-	alternate-normal-background: #00000000;
+    selected-normal-background: #00000000;
+    normal-background: #00000000;
+    alternate-normal-background: #00000000;
 			
     border-color: #7555FF;
    	text-color: #A290F1;
     font: "Terminess Nerd Font Bold 36";
-	opacity: 0.3;
+    opacity: 0.3;
 }
  
 #window {
-	background-color: #1B1F3B;
+    background-color: #1B1F3B;
     border: 4;
     padding: 2.5%;
     width: 30%;
@@ -43,13 +43,17 @@ configuration {
  
 #element {
     border-color: #A290F1;
-    padding: 4 0 6 -25;
+    padding: 4 0 6 0;
 }
  
  
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
     background-color: #00000000;
+}
+
+#entry {
+  placeholder: "";
 }
  
  
@@ -59,3 +63,7 @@ configuration {
     margin:     0px 0.3em 0em 0em ;
 }
 
+
+#textbox {
+  color: red;
+}

@@ -1,0 +1,220 @@
+* {
+  font-family: "JetBrains Mono Nerd Font";
+  /*font-family: "JetBrainsMono Nerd Font";*/
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#custom-notification {
+  font-family: "JetBrains Mono Nerd Font";
+  font-size: 16px;
+  color: #7555ff;
+  /* color: #9488e3; */
+  margin: 0px 0px 0px;
+}
+
+window#waybar {
+  background: none;
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+tooltip {
+  background: #1b1f3b;
+  color: white;
+  font-size: 13px;
+  border-radius: 0px;
+  border: 2px solid #7555ff;
+}
+
+#taskbar button {
+  box-shadow: none;
+  text-shadow: none;
+  font-size: 4px;
+  border-radius: 9px;
+  margin-bottom: 3px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#taskbar button.active {
+  margin-left: 3px;
+  margin-right: 3px;
+  padding-left: 12px;
+  padding-right: 12px;
+  animation: tb_active 20s ease-in-out 1;
+  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  min-height: 9px;
+}
+
+#taskbar button:hover {
+}
+
+#workspaces {
+  padding: 0;
+  margin: 0px;
+}
+#workspaces button.active,
+#workspaces button {
+  color: #7555ff;
+  padding: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#workspaces button {
+  border-radius: 0px;
+  border: none;
+}
+
+#workspaces button.active {
+  /* background-image: url("/home/anik/Documents/bar1.png");*/
+  background: #7555ff;
+  color: #1b1f3b;
+}
+
+#workspaces {
+  color: #888789;
+  transition: 0.2s ease;
+}
+
+#tray menu * {
+  min-height: 12px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #7555ff;
+}
+
+#tray menu separator {
+  min-height: 10px;
+}
+
+#custom-spacer {
+  opacity: 0;
+}
+#custom-smallspacer {
+  opacity: 0;
+}
+
+#custom-mouse {
+  font-size: 14px;
+  margin-bottom: 6px;
+  background: #161320;
+}
+
+#custom-power {
+  font-size: 15px;
+  color: #ffffff;
+  background: rgba(22, 19, 32, 0.9);
+  margin: 6px 0px 6px 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#backlight {
+  color: #2096c0;
+  background: rgba(23, 23, 23, 0);
+  font-weight: normal;
+  font-size: 19px;
+  margin: 1px 0px 0px 0px;
+  padding-left: 0px;
+  padding-right: 2px;
+}
+#bluetooth,
+#custom-cliphist {
+  color: #e6e7e7;
+  background: #161320;
+  opacity: 1;
+  margin: 4px 0px 4px 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+#battery,
+#network,
+#cpu,
+#clock {
+  /* color: rgba(133, 110, 230, 1); */
+  color: #7555ff;
+}
+
+#battery,
+#network,
+#cpu {
+  /*color: rgba(255,255,255,1.0);*/
+  font-size: 22px;
+  font-weight: 800;
+  padding-left: 0px;
+  padding-right: 22px;
+}
+
+#battery {
+  font-size: 16px;
+}
+#battery.charging,
+#battery.plugged {
+  color: #e8edf0;
+}
+#battery.critical:not(.charging) {
+  color: red;
+}
+
+#network {
+  padding-right: 16px;
+}
+#clock {
+  font-weight: 900;
+  font-size: 18px;
+}
+#cpu {
+  padding-bottom: 6px;
+  padding-right: 10px;
+}
+#language {
+  font-size: 22px;
+  color: #e4c9af;
+}
+
+#mpris {
+  color: white;
+  animation: repeat;
+  animation-name: blink;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    color: #4a4a4a;
+  }
+}
+
+#mpris {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+  background: #a1bdce;
+  background-color: transparent;
+  box-shadow: none;
+  margin-right: 7px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  margin-top: -3px;
+  min-width: 90px;
+  min-height: 10px;
+  margin-bottom: -4px;
+  border-radius: 8px;
+  background: #343434;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  border-radius: 8px;
+  background-color: #2096c0;
+}

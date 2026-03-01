@@ -13,3 +13,6 @@ include workspace
 
 # Launch applications on boot	
 include startup
+
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
